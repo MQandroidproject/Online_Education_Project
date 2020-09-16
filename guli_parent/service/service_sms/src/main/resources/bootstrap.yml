@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: service-sms
+  profiles:
+    active: dev # 环境标识，test、prod等
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848 #nacos中心地址
+        file-extension: yaml # 配置文件格式，如果是properties文件则不用配置此项
+        namespace: fa8ee614-4504-4807-8e51-d2fe8fb9d20d
+        group: 51
+        ext-config:
+        - data-id: aliyun.yaml
+          group: 51
+          refresh: true
+        - data-id: redis.yaml
+          group: 51
+          refresh: true
